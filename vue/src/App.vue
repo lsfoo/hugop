@@ -37,14 +37,15 @@ html,
 body {
   height: 100%;
 }
-div {
-  border: 1px solid blue;
-}
 .main {
   position: absolute;
   top: 60px;
   bottom: 0px;
   left: 15px;
   right: 15px;
+}
+main {
+  overflow: auto;
+
 }
 </style>

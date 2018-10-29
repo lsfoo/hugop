@@ -59,14 +59,20 @@
           <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
             <div class="card-body">
               <h5 class="mb-0">
-                <router-link class="btn btn-link collapsed" to="/tpl/alerts">组件</router-link>
+                <router-link class="btn btn-link collapsed" to="/tpl/alerts">提示</router-link>
               </h5>
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <h5 class="mb-0">
+                <router-link class="btn btn-link collapsed" to="/tpl/badges">徽标</router-link>
+              </h5>
+              <h5 class="mb-0">
+                <router-link class="btn btn-link collapsed" to="/tpl/breadcrumb">面包屑</router-link>
+              </h5>
+<h5 class="mb-0">
+                <router-link class="btn btn-link collapsed" to="/tpl/buttons">按钮</router-link>
+              </h5>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
