@@ -3,9 +3,12 @@
     <el-container>
       <el-aside width="240px" class="sidebar">
         <el-col :span="24">
-          <h2 style="margin-left:100px">面板</h2>
-          <el-input   placeholder="搜索菜单"></el-input>
-          <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+          <h2 style="margin:50px">面板</h2>
+          <div>
+
+          <el-input   placeholder="搜索菜单" ></el-input>
+          </div>
+          <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"  >
             <el-submenu index="1">
               <template slot="title">
                 <i class="el-icon-location"></i>
@@ -42,7 +45,7 @@
       </el-aside>
       <el-container>
         <el-header>
-          <el-menu :default-active="activeIndex2" class="navbar-fixed" mode="horizontal" @select="handleSelect">
+          <el-menu :default-active="activeIndex2"  mode="horizontal" @select="handleSelect" >
             <el-menu-item index="1">处理中心</el-menu-item>
             <el-submenu index="2">
               <template slot="title">我的工作台</template>
@@ -79,28 +82,26 @@ html {
   margin: 0px;
 }
 #app {
-}
-.el-header {
-  padding: 0 0 0 250px;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
-    0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-.el-aside {
-  position: fixed;
-  z-index: 3000;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   height: 100%;
 }
-.fixed-top {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
+.el-header {
+  padding: 0 0 ;
+  
+}
+.el-menu{
+  border: 0;
+
+}
+.el-aside {
+  background-color: #f9f9f9;
+  border-right:1px solid #eee;
+  height: 100%;
 }
 .el-container {
   height: 100%;
+}
+.el-main{
+  overflow-y: auto;
 }
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 ::-webkit-scrollbar {

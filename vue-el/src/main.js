@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import Element from 'element-ui'
 import '../theme/index.css'
-Vue.use(Element, { size: 'small' })
+Vue.use(Element, { size: 'mini' })
 
 /* eslint-disable no-new */
 new Vue({
