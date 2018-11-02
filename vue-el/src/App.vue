@@ -16,8 +16,8 @@
   </div>
 </template>
 <script>
-import Sidebar from "@/components/common/sidebar";
-import Navbar from "@/components/common/navbar";
+import Sidebar from "./components/common/sidebar";
+import Navbar from "./components/common/navbar";
 export default {
   components: {
     "c-sidebar": Sidebar,
