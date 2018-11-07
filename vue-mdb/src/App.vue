@@ -23,39 +23,47 @@
     </main>
     <Footer color="default-color">
       <p class="footer-copyright mb-0 py-3 text-center">
-        &copy; {{new Date().getFullYear()}} Copyright: <a href="https://www.mdbootstrap.com/?utm_source=DemoApp&utm_medium=MDBVue"> MDBootstrap.com </a>
+        &copy; {{new Date().getFullYear()}} Copyright: <a href="https://www.mdbootstrap.com/?utm_source=DemoApp&utm_medium=MDBVue">
+          MDBootstrap.com </a>
       </p>
     </Footer>
   </div>
 </template>
 
 <script>
-import { Navbar, NavbarItem, NavbarNav, NavbarCollapse, mdbNavbarBrand, Footer } from 'mdbvue';
-
-export default {
-  name: 'app',
-  components: {
+  import {
     Navbar,
     NavbarItem,
     NavbarNav,
     NavbarCollapse,
     mdbNavbarBrand,
     Footer
-  }
-};
+  } from "mdbvue";
+
+  export default {
+    name: "app",
+    components: {
+      Navbar,
+      NavbarItem,
+      NavbarNav,
+      NavbarCollapse,
+      mdbNavbarBrand,
+      Footer
+    }
+  };
 
 </script>
 
 <style>
-.flyout {
-	display:flex;
-	flex-direction: column;
-	min-height:100vh;
-	justify-content: space-between;
-}
+  .flyout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+  }
 
-.active{
-  background-color: rgba(255, 255, 255, 0.1);
-}
+  .active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 
 </style>
