@@ -1,7 +1,5 @@
 <template>
-
     <el-menu class="shadow"   mode="horizontal" background-color="#1976d2" text-color="#fff" active-text-color="#ffffcc">
-
         <el-submenu index="1" style="float:right">
             <template slot="title">我的工作台</template>
             <el-menu-item index="2-1">选项1</el-menu-item>
@@ -19,8 +17,7 @@
 </template>
 <style>
 .shadow{
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3)
-
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
 }
 .el-menu.el-menu--horizontal{
     border: 0px;

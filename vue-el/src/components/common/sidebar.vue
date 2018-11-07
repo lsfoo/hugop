@@ -1,6 +1,5 @@
 <template>
     <el-col :span="24" style="background-color: #fafafa;">
-
         <div class="searchbar">
             <el-input placeholder="搜索菜单"></el-input>
         </div>
@@ -30,5 +29,3 @@
   margin: 20px;
 }
 </style>
-
-

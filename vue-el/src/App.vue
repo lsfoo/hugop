@@ -16,14 +16,14 @@
   </div>
 </template>
 <script>
-import Sidebar from "./components/common/sidebar";
-import Navbar from "./components/common/navbar";
+import Sidebar from './components/common/sidebar'
+import Navbar from './components/common/navbar'
 export default {
   components: {
-    "c-sidebar": Sidebar,
-    "c-navbar": Navbar
+    'c-sidebar': Sidebar,
+    'c-navbar': Navbar
   }
-};
+}
 </script>
 
 <style>
@@ -46,7 +46,7 @@ html {
 .el-aside {
   height: 100%;
 
-box-shadow: 6px 0 6px rgba(0,0,0,.1)
+  box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
 }
 .el-container {
   height: 100%;
