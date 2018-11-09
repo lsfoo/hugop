@@ -1,0 +1,65 @@
+package(default_visibility=["//visibility:public"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "sass_library", "sass_binary")
+load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite")
+
+ng_module(
+  name = "menu",
+  srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
+  module_name = "@angular/material/menu",
+  assets = [":menu.css"] + glob(["**/*.html"]),
+  deps = [
+    "@angular//packages/animations",
+    "@angular//packages/common",
+    "@angular//packages/core",
+    "@rxjs",
+    "@rxjs//operators",
+    "//src/cdk/a11y",
+    "//src/cdk/bidi",
+    "//src/cdk/coercion",
+    "//src/cdk/keycodes",
+    "//src/cdk/overlay",
+    "//src/cdk/portal",
+    "//src/lib/core",
+  ],
+)
+
+# TODO(jelbourn): replace this w/ sass_library when it supports acting like a filegroup
+filegroup(
+  name = "menu_scss_partials",
+  srcs = glob(["**/_*.scss"]),
+)
+
+sass_binary(
+  name = "menu_scss",
+  src = "menu.scss",
+  deps = ["//src/lib/core:core_scss_lib"],
+)
+
+sass_library(
+  name = "theme",
+  srcs = glob(["**/*-theme.scss"]),
+)
+ng_test_library(
+  name = "menu_test_sources",
+  srcs = glob(["**/*.spec.ts"]),
+  deps = [
+    "@angular//packages/platform-browser",
+    "@angular//packages/platform-browser/animations",
+    "@rxjs",
+    "//src/cdk/a11y",
+    "//src/cdk/bidi",
+    "//src/cdk/keycodes",
+    "//src/cdk/overlay",
+    "//src/cdk/scrolling",
+    "//src/cdk/testing",
+    "//src/lib/core",
+    ":menu",
+  ]
+)
+
+ng_web_test_suite(
+  name = "unit_tests",
+  deps = [":menu_test_sources"],
+)
+

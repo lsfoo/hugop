@@ -1,0 +1,58 @@
+package(default_visibility=["//visibility:public"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "sass_library", "sass_binary")
+load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite")
+
+ng_module(
+  name = "list",
+  srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
+  module_name = "@angular/material/list",
+  assets = [":list.css"] + glob(["**/*.html"]),
+  deps = [
+    "@angular//packages/common",
+    "@angular//packages/core",
+    "@angular//packages/forms",
+    "@rxjs",
+    "//src/cdk/a11y",
+    "//src/cdk/coercion",
+    "//src/cdk/collections",
+    "//src/cdk/keycodes",
+    "//src/lib/core",
+    "//src/lib/divider",
+  ],
+)
+
+# TODO(jelbourn): replace this w/ sass_library when it supports acting like a filegroup
+filegroup(
+  name = "list_scss_partials",
+  srcs = glob(["**/_*.scss"]),
+)
+
+sass_binary(
+  name = "list_scss",
+  src = "list.scss",
+  deps = ["//src/lib/core:core_scss_lib", "//src/lib/divider:divider_scss_lib"],
+)
+
+sass_library(
+  name = "theme",
+  srcs = glob(["**/*-theme.scss"]),
+)
+
+ng_test_library(
+  name = "list_test_sources",
+  srcs = glob(["**/*.spec.ts"]),
+  deps = [
+    "@angular//packages/forms",
+    "@angular//packages/platform-browser",
+    "//src/cdk/keycodes",
+    "//src/cdk/testing",
+    "//src/lib/core",
+    ":list",
+  ]
+)
+
+ng_web_test_suite(
+  name = "unit_tests",
+  deps = [":list_test_sources"],
+)

@@ -1,0 +1,32 @@
+package(default_visibility=["//visibility:public"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "sass_library", "sass_binary")
+load("//tools:defaults.bzl", "ng_module")
+
+ng_module(
+  name = "card",
+  srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
+  module_name = "@angular/material/card",
+  assets = [":card.css"] + glob(["**/*.html"]),
+  deps = [
+    "@angular//packages/core",
+    "//src/lib/core",
+  ],
+)
+
+# TODO(jelbourn): replace this w/ sass_library when it supports acting like a filegroup
+filegroup(
+  name = "card_scss_partials",
+  srcs = glob(["**/_*.scss"]),
+)
+
+sass_binary(
+  name = "card_scss",
+  src = "card.scss",
+  deps = ["//src/lib/core:core_scss_lib"],
+)
+
+sass_library(
+  name = "theme",
+  srcs = glob(["**/*-theme.scss"]),
+)

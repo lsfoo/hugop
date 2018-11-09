@@ -1,0 +1,25 @@
+package(default_visibility=["//visibility:public"])
+
+load("//tools:defaults.bzl", "ts_library", "jasmine_node_test")
+
+ts_library(
+  name = "coercion",
+  srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
+  module_name = "@angular/cdk/coercion",
+  deps = ["@matdeps//tslib"],
+)
+
+ts_library(
+  name = "coercion_test_sources",
+  srcs = glob(["**/*.spec.ts"]),
+  deps = [
+    "@matdeps//@types/jasmine",
+    ":coercion"
+  ],
+  testonly = 1,
+)
+
+jasmine_node_test(
+  name = "unit_tests",
+  deps = [":coercion_test_sources"],
+)
